@@ -10,7 +10,7 @@ if [[ $- =~ "i" ]]; then
 	MYFILE=`ls ~/.bash/* |sort -R | tail -1`
 	echo $MYFILE
 	echo
-	iconv -c -f 437 -t utf-8 $MYFILE
+	iconv -c -f 437 -t utf-8 $MYFILE | awk '{print $0; system("sleep .005");}' 
 	echo 
 fi
 
